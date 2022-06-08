@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Link to CSS archive-->
-    <link rel="stylesheet" href="C:\Users\muril\Documents\Trabalho\trabalho-main\content.css">
+    <link rel="stylesheet" href="C:\Users\muril\Documents\Trab Inter\content.css">
     <!--Connection to Google Fonts-->  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,67 @@
 
 </head>
 <body>
-    <h1>Gerenciador de Empréstimos de Equipamentos</h1>
-    <cite>Sistema para gerenciar os equipamentos emprestados aos colaboradores</cite>
+    <h1 id="titulo">Gerenciador de Empréstimos de Equipamentos</h1>
+    <p id="textoTitulo">Sistema para gerenciar os equipamentos emprestados aos colaboradores</p><br><br>
+
+    <div>
+        <h3 id="tituloCadastro">Cadastro de solicitação</h3>
+        <p id="textoCadastro">Insira aqui seus dados e as informações dos equipamentos</p>
+    </div>
+    
+    <form>
+        <fieldset class="grupo">
+            <div class="campo">
+                <label for="nome" id="nome"><strong>Nome</strong></label>
+                <input type="text" name="nome" id="nome" required><br><br>
+            </div>
+
+            <div class="campo">
+                <label for="sobrenome" id="sobrenome"><strong>Sobrenome</strong></label>
+                <input type="text" name="sobrenome" id="sobrenome" required><br><br>
+            </div>
+
+            <div class="campo">
+                <label for="email" id="email"><strong>E-mail</strong></label>
+                <input type="email" name="email" id="email"><br><br>
+            </div>
+
+            <div class="campo">
+                <label id="textoEmp">Qual o equipamento deseja fazer empréstimo?</label>
+                <label>
+                    <input type="radio" name="contabilidade" value="contabilidade">Webcam
+                </label>
+                <label>
+                    <input type="radio" name="gerencia" value="gerencia">Caixa de som
+                </label>
+                <label>
+                    <input type="radio" name="fincanceiro" value="financeiro">Datashow (projetor)
+                </label>
+                <label>
+                    <input type="radio" name="farmacia" value="farmacia">Notebook
+                </label>
+            </div><br>
+
+            <div class="campo">
+                <label for="equipamento">Qual o seu setor?</label>
+                <select id="equipamento" required>
+                    <option selected disabled value="">Selecione aqui</option>
+                    <option>Contabilidade</option>
+                    <option>Gerência</option>
+                    <option>Financeiro</option>
+                    <option>Farmácia</option>
+                    <option>Centro Cirúrgico</option>
+                </select>
+            </div><br>
+
+            <div>
+                <label>Insira o dia e hora que irá pegar o equipamento</label>
+                <input type="datetime-local" id="dataEmprest" name="dataEmprest">
+            </div>
+        </fieldset><br>
+
+        <button class="enviar" type="submit">Enviar Pedido</button>
+        <button class="reset" type="reset" onclick="alert('Pedido Cancelado.')">Cancelar</button><br><br>
+    </form>
 </body>
 </html>
