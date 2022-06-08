@@ -1,8 +1,24 @@
-import {initializeApp} from 'firebase/app';
+var pessoas, index;
 
-//TODO: Replace the following with your app: 
-const firebaseConfig = {
-    //...
-};
+function cadPessoa(nome, sobrenome, email) {
+    pessoas = document.getElementsById("tbPessoas");
+    var qtdLinhas = pessoas.rows.lenght;
+    var linha = pessoas.insertRow (qtdLinhas);
+    var linhaParam;
+    
+    var cellCodigo = linha.insertCell (0);
+    var cellNome = linha.insertCell (1);
+    var cellSobrenome = linha.insertCell (2);
+    var cellEmail = linha.insertCell (3);
 
-const app = initializeApp(firebaseConfig);
+    cellCodigo.innerHTML = qtdLinhas;
+    cellNome.innerHTML = nome;
+    cellSobrenome.innerHTML = sobrenome;
+    cellEmail.innerHTML = email;
+
+    preenchCamposForm();
+}
+
+function altPessoa(nome, sobrenome, email) {
+    pessoas.rows[index].cells[1]
+}

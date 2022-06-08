@@ -30,6 +30,14 @@ input, select, button {
     border-radius: 5px;
 }
 
+#cadast {
+    border-image: linear-gradient(to left, turquoise, greenyellow) 1 0;
+}
+
+#equip {
+    border: 2px red;
+}
+
 #titulo {
     text-align: center;
 }
