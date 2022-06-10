@@ -1,24 +1,5 @@
 var pessoas, index;
 
-function cadPessoa(nome, sobrenome, email) {
-    pessoas = document.getElementsById("tbPessoas");
-    var qtdLinhas = pessoas.rows.lenght;
-    var linha = pessoas.insertRow (qtdLinhas);
-    var linhaParam;
+function cadPessoa(nome, sobrenome, email, cracha) {
     
-    var cellCodigo = linha.insertCell (0);
-    var cellNome = linha.insertCell (1);
-    var cellSobrenome = linha.insertCell (2);
-    var cellEmail = linha.insertCell (3);
-
-    cellCodigo.innerHTML = qtdLinhas;
-    cellNome.innerHTML = nome;
-    cellSobrenome.innerHTML = sobrenome;
-    cellEmail.innerHTML = email;
-
-    preenchCamposForm();
-}
-
-function altPessoa(nome, sobrenome, email) {
-    pessoas.rows[index].cells[1]
 }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Link to CSS archive-->
+    <link rel="stylesheet" href="C:\Users\muril\Documents\Trab Inter\content.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--Connection to Google Fonts-->  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <title>Trabalho Interdiciplinar V - UNIRP EaD Rio Preto</title>
+
+</head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+
+<body>
+    <div id="table">
+        <table class="table table-striped">
+            <thead>
+                <tr class="bg-info">
+                    <th scope="col">Nome</th>
+                    <th scope="col">Setor</th>
+                    <th scope="col">Equipamento</th>
+                    <th scope="col">Data</th>
+                </tr>
+            </thead>
+
+        <tbody id="myTable">
+
+
+        </tbody>
+
+        </table>
+
+        <script>
+            var myArray = [
+                {'nome' : 'Marlon', 'setor' : 'contabilidade', 'equip' : 'webcam', 'dia' : '11/10/2021' },
+                {'nome' : 'Raquel', 'setor' : 'financeiro', 'equip' : 'webcam', 'dia' : '11/10/2021' },
+                {'nome' : 'Ana', 'setor' : 'uti', 'equip' : 'caixa', 'dia' : '10/06/2022' },
+                {'nome' : 'Murilo', 'setor' : 'ti', 'equip' : 'caixa', 'dia' : '10/06/2022' }
+            ]
+
+            buildTable(myArray)
+
+            function buildTable(data) {
+                var table = document.getElementById('myTable')
+
+                for (var i = 0; i < data.length; i++){
+                    var row = `<tr>
+                                    <td>${data[i].nome}</td>
+                                    <td>${data[i].setor}</td>
+                                    <td>${data[i].equip}</td>
+                                    <td>${data[i].dia}</td>
+                                </tr>`
+                    table.innerHTML += row
+                }
+            }
+        </script>
+
+    </div>
+</body>
+</html>

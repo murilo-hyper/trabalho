@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Link to CSS archive-->
-    <link rel="stylesheet" href="C:\Users\muril\Documents\Trabalho\trabalho-main\content.css">
+    <link rel="stylesheet" href="C:\Users\muril\Documents\Trab Inter\content.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <!--Connection to Google Fonts-->  
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,80 +14,63 @@
 
     <title>Trabalho Interdiciplinar V - UNIRP EaD Rio Preto</title>
 
-    <!--Begining of Firebase link
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-app.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.2/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyAPUWcJaSjRX6w1BSUUaX_Y_uUfGEnHids",
-          authDomain: "trabalho-inter.firebaseapp.com",
-          projectId: "trabalho-inter",
-          storageBucket: "trabalho-inter.appspot.com",
-          messagingSenderId: "675418954915",
-          appId: "1:675418954915:web:63a07432f6ce589d887316",
-          measurementId: "G-Y6L8V4EYB8"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-      </script>-->
-
 </head>
-<body>
-    <h1 id="titulo">Gerenciador de Empréstimos de Equipamentos</h1>
-    <p id="textoTitulo">Sistema para gerenciar os equipamentos emprestados aos colaboradores</p><br>
+<!--Header of the page-->
+<body class="text-center bg-secondary">
+    <div class="text-center">
+        <br><h1><b>GERENCIADOR DE EMPRÉSTIMOS DE EQUIPAMENTOS</b></h1>
+        <p class="font-italic" id="textoTitulo"><b>Sistema para gerenciar os equipamentos emprestados aos colaboradores</b></p><br><br>
+    </div>
 
     <div>
-        <h3 id="tituloCadastro">Cadastro de solicitação</h3>
+        <h3 id="tituloCadastro"><b>Cadastro de solicitação</b></h3>
         <p id="textoCadastro">Insira aqui seus dados e as informações dos equipamentos</p>
     </div>
-    
-    <div id="cadast">
-      <form>
-        <fieldset class="grupo">
+
+<!--Form body starts with user information-->
+    <form>
+        <fieldset>
             <div class="campo">
-                <label for="nome" id="nome"><strong>Nome</strong></label>
-                <input type="text" name="nome" id="nome" required><br><br>
+                <input type="text" name="nome" id="nome" placeholder="Nome" required><br><br>
             </div>
 
             <div class="campo">
-                <label for="sobrenome" id="sobrenome"><strong>Sobrenome</strong></label>
-                <input type="text" name="sobrenome" id="sobrenome" required><br><br>
+                <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" required><br><br>
             </div>
 
             <div class="campo">
-                <label for="email" id="email"><strong>E-mail</strong></label>
-                <input type="email" name="email" id="email"><br><br>
+                <input type="email" name="email" id="email" placeholder="E-mail"><br><br>
             </div>
-    </div>
 
-    <div id="equip">
+            <div class="campo">
+                <input type="number" name="cracha" id="cracha" placeholder="Crachá" required><br><br>
+            </div><br>
+
+<!--End of user information-->
+
+<!--Info about the equip-->
             <div class="campo">
                 <label id="textoEmp">Qual o equipamento deseja fazer empréstimo?</label>
                 <label>
-                    <input type="radio" name="contabilidade" value="contabilidade">Webcam
+                    <input type="radio" name="webcam" id="webcam" value="webcam"> Webcam
                 </label>
                 <label>
-                    <input type="radio" name="gerencia" value="gerencia">Caixa de som
+                    <input type="radio" name="caixa" id="caixa" value="caixa"> Caixa de som
                 </label>
                 <label>
-                    <input type="radio" name="fincanceiro" value="financeiro">Datashow (projetor)
+                    <input type="radio" name="projetor" id="projetor" value="projetor"> Datashow (projetor)
                 </label>
                 <label>
-                    <input type="radio" name="farmacia" value="farmacia">Notebook
+                    <input type="radio" name="notebook" id="notebook" value="notebook"> Notebook
                 </label>
             </div><br>
 
+<!--End of info of the equip-->
+
+<!--Start of user sector selection-->
             <div class="campo">
-                <label for="equipamento">Qual o seu setor?</label>
-                <select id="equipamento" required>
+                <label for="setor">Qual o seu setor?</label>
+                <select id="setor" required>
                     <option selected disabled value="">Selecione aqui</option>
                     <option>Contabilidade</option>
                     <option>Gerência</option>
@@ -96,14 +80,21 @@
                 </select>
             </div><br>
 
+<!--End of user sector selection-->
+
+<!--Time picker-->
             <div>
                 <label>Insira o dia e hora que irá pegar o equipamento</label>
                 <input type="datetime-local" id="dataEmprest" name="dataEmprest">
             </div>
         </fieldset><br>
-     </div>
-        <button class="enviar" type="submit">Enviar Pedido</button>
-        <button class="reset" type="reset" onclick="alert('Pedido Cancelado.')">Cancelar</button><br><br>
+
+<!--End of time picker-->
+
+<!--Buttons-->
+        <button class="btn btn-success" type="submit">Enviar Pedido</button>
+        <a class="btn btn-warning" href="C:\Users\muril\Documents\Trab Inter\table.html" target="_blank">Ver Tabela</a>
+        <button class="btn btn-danger" type="reset" onclick="alert('Pedido Cancelado.')">Cancelar</button><br><br>
     </form>
 </body>
 </html>
