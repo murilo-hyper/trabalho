@@ -1,3 +1,9 @@
+<?php 
+
+$nome = $_POST['nome']; // Aqui estou pegando via POST da outra página e atribuindo o valor na variavel nome
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,25 +29,23 @@
             <thead>
                 <tr class="bg-info">
                     <th scope="col">Nome</th>
+                    <th scope="col">Crachá</th>
                     <th scope="col">Setor</th>
                     <th scope="col">Equipamento</th>
                     <th scope="col">Data</th>
                 </tr>
             </thead>
 
-        <tbody id="myTable">
-
-
-        </tbody>
+        <tbody id="myTable"></tbody>
 
         </table>
 
         <script>
             var myArray = [
-                {'nome' : 'Marlon', 'setor' : 'contabilidade', 'equip' : 'webcam', 'dia' : '11/10/2021' },
-                {'nome' : 'Raquel', 'setor' : 'financeiro', 'equip' : 'webcam', 'dia' : '11/10/2021' },
-                {'nome' : 'Ana', 'setor' : 'uti', 'equip' : 'caixa', 'dia' : '10/06/2022' },
-                {'nome' : 'Murilo', 'setor' : 'ti', 'equip' : 'caixa', 'dia' : '10/06/2022' }
+                {'nome' : 'Marlon', 'cracha' : '1234', 'setor' : 'contabilidade', 'equip' : 'webcam', 'dia' : '11/10/2021' },
+                {'nome' : 'Raquel', 'cracha' : '1234', 'setor' : 'financeiro', 'equip' : 'webcam', 'dia' : '11/10/2021' },
+                {'nome' : 'Ana',  'cracha' : '1234','setor' : 'uti', 'equip' : 'caixa', 'dia' : '10/06/2022' },
+                {'nome' : 'Murilo',  'cracha' : '1234','setor' : 'ti', 'equip' : 'caixa', 'dia' : '10/06/2022' }
             ]
 
             buildTable(myArray)
@@ -52,6 +56,7 @@
                 for (var i = 0; i < data.length; i++){
                     var row = `<tr>
                                     <td>${data[i].nome}</td>
+                                    <td>${data[i].cracha}</td>
                                     <td>${data[i].setor}</td>
                                     <td>${data[i].equip}</td>
                                     <td>${data[i].dia}</td>
@@ -60,7 +65,6 @@
                 }
             }
         </script>
-
     </div>
 </body>
 </html>
